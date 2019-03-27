@@ -1,0 +1,25 @@
+## YAML Template.
+---
+# Define a custom port instead of the default 8080
+server.port: 8443
+# Tell Spring Security (if used) to require requests over HTTPS
+security.require-ssl: true
+# The format used for the keystore 
+server.ssl.key-store-type: jks
+# The path to the keystore containing the certificate
+server.ssl.key-store: keystore.jks
+# The password used to generate the certificate
+server.ssl.key-store-password: miguelyvidal
+# The alias mapped to the certificate
+server.ssl.key-alias: tomcat
+
+spring.datasource.driver-class-name: org.apache.derby.jdbc.ClientDriver
+spring.datasource.url: jdbc:derby://localhost:1527/daep2
+spring.datasource.username: usuario
+spring.datasource.password: admin
+spring.datasource.tomcat.max-active: 50
+
+spring.jpa.hibernate.ddl-auto: update
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.DerbyTenSevenDialect
+
+spring.cache.ehcache.config: classpath:ehcache.xml
